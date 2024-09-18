@@ -1,6 +1,7 @@
 import 'package:elevate_task/core/constants/app_constants.dart';
-import 'package:elevate_task/features/products/ui/widgets/product_card.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/products_bloc_builder/products_bloc_builder.dart';
 
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({super.key});
@@ -10,15 +11,7 @@ class ProductsScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: AppConstants.defaultPadding,
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.7,
-          ),
-          itemBuilder: (context, index) {
-            return const ProductCard();
-          },
-        ),
+        child: const ProductsBlocBuilder(),
       ),
     );
   }

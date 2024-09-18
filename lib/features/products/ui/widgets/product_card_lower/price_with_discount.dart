@@ -8,15 +8,15 @@ class PriceWithDiscount extends StatelessWidget {
     required this.price,
     required this.priceBeforeDiscount,
   });
-  final int price;
-  final int priceBeforeDiscount;
+  final num price;
+  final num priceBeforeDiscount;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          'EGP $priceBeforeDiscount',
+          'EGP $price',
           style: AppStyle.font14BlackW500,
         ),
         horizontalSpace(10),

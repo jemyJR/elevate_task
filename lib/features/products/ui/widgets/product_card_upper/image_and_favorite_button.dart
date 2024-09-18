@@ -1,8 +1,8 @@
-import 'package:elevate_task/core/constants/app_assets.dart';
 import 'package:elevate_task/core/constants/app_constants.dart';
+import 'package:elevate_task/core/widgets/custom_network_image.dart';
 import 'package:elevate_task/features/products/ui/widgets/product_card_upper/favorite_button.dart';
-import 'package:elevate_task/features/products/ui/widgets/product_card_upper/image_with_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ImageAndFavoriteButton extends StatelessWidget {
   const ImageAndFavoriteButton({super.key, required this.image});
@@ -14,8 +14,10 @@ class ImageAndFavoriteButton extends StatelessWidget {
     return Stack(
       alignment: Alignment.topRight,
       children: [
-        const ImageWithBorder(
-          image: Assets.imagesTest,
+        CustomNetworkImage(
+          height: 100.h,
+          width: double.infinity,
+          imageUrl: image,
         ),
         Padding(
           padding: AppConstants.defaultPadding,

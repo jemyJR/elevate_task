@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ReviewRating extends StatelessWidget {
   const ReviewRating({super.key, required this.rating});
 
-  final double rating;
+  final num rating;
 
   @override
   Widget build(BuildContext context) {
