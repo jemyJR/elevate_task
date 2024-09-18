@@ -17,6 +17,13 @@ dependencies:
   cupertino_icons: ^1.0.6
   # For Responsive UI
   flutter_screenutil: ^5.9.3
+  shimmer: ^3.0.0
+  cached_network_image: ^3.4.1
+  dio: ^5.7.0
+  get_it: ^7.7.0
+  pretty_dio_logger: ^1.4.0
+  dartz: ^0.10.1
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:

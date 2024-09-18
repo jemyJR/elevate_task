@@ -1,12 +1,16 @@
 import 'package:elevate_task/core/constants/app_colors.dart';
 import 'package:elevate_task/core/constants/app_constants.dart';
+import 'package:elevate_task/core/helpers/extensions.dart';
+import 'package:elevate_task/features/products/data/models/product_model.dart';
 import 'package:elevate_task/features/products/ui/widgets/product_card_lower/price_with_discount.dart';
 import 'package:elevate_task/features/products/ui/widgets/product_card_lower/review_rating.dart';
 import 'package:elevate_task/features/products/ui/widgets/product_card_lower/title_with_description.dart';
 import 'package:flutter/material.dart';
 
 class CardContent extends StatelessWidget {
-  const CardContent({super.key});
+  const CardContent({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +21,20 @@ class CardContent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const TitleWithDescription(
-              title: 'Nike Air Jordan',
-              description: 'Product Description here',
+            TitleWithDescription(
+              title: product.title,
+              description: product.description,
             ),
             // verticalSpace(5),
-            const PriceWithDiscount(
-              price: 1800,
-              priceBeforeDiscount: 2100,
+            PriceWithDiscount(
+              price: product.price,
+              priceBeforeDiscount: product.price.randomIncreasedPrice,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const ReviewRating(
-                  rating: 4.5,
+                ReviewRating(
+                  rating: product.rating.rate,
                 ),
                 CircleAvatar(
                   backgroundColor: AppColors.darkBlue,
